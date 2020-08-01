@@ -1,0 +1,8 @@
+h5py==2.9.0
+Keras==2.3.1
+numpy==1.17.2
+opencv-python==4.1.1.26
+pyttsx3==2.88
+scikit-learn==0.23.1
+sklearn==0.0
+tensorflow==2.0.0
