@@ -1,1 +1,2 @@
-"# Hack-o-holics" 
+# Sign Language Interpreter
+#### By Hack'o'holis
