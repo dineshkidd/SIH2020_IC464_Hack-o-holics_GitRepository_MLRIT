@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         getSupportActionBar().hide();
 
         javaCameraView = (JavaCameraView) findViewById(R.id.cameraview);
-        javaCameraView.setCameraIndex(0);
+        javaCameraView.setCameraIndex(1);
         scalarLow = new Scalar(0, 58, 30);
         scalarHigh = new Scalar(33, 255, 255);
         javaCameraView.setCvCameraViewListener(this);
@@ -67,15 +67,15 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     @Override
     public void onCameraViewStarted(int width, int height) {
-        mat1 = new Mat(width,height,CvType.CV_16S);
-        mat2 = new Mat(width,height,CvType.CV_16S);
+        mat1 = new Mat(width,height,CvType.CV_16UC4);
+        mat2 = new Mat(width,height,CvType.CV_16UC4);
 
 
     }
 
     @Override
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
-        Imgproc.cvtColor(inputFrame.rgba(),mat1,Imgproc.COLOR_BGR2HSV);
+        Imgproc.cvtColor(inputFrame.rgba(),mat1,Imgproc.COLOR_RGB2HSV);
         Core.inRange(mat1,scalarLow,scalarHigh,mat2);
         Core.flip(mat2,mat2,1);
 
