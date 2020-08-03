@@ -6,3 +6,4 @@ pyttsx3==2.88
 scikit-learn==0.23.1
 sklearn==0.0
 tensorflow==2.0.0
+Pillow==7.2.0
